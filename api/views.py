@@ -16,7 +16,7 @@ def allTask(request):
     tasks = Tasks.objects.all()
     serializer = TaskSerializer(tasks,many=True)
 
-    return Response(serializer.data)
+    return Response({"data":serializer.data})
 
 @api_view(['POST'])
 def newTask(request):
